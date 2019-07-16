@@ -45,12 +45,10 @@ class MenuList extends Component {
 
     return (
       <div className="menu-list">
-        {sections.map(({ title, id, imageUrl, size }) => (
+        {sections.map(({ id, ...otherProps}) => (
           <MenuItem
-            title={title.toUpperCase()}
-            key={id}
-            imageUrl={imageUrl}
-            size={size}
+          
+            key={id} {...otherProps}
           />
         ))}
       </div>
